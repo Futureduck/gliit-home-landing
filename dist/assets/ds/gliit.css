@@ -1,0 +1,243 @@
+/* Gliit Design System — built for static deploy.
+   웹폰트는 index.html의 <link>로 이동 (원본은 @font-face 뒤에 @import가 와서 무효였음). */
+
+/* =============================================================
+   Gliit Design System — Colors & Typography
+   글잇 (Gliit) — 사고를 잇는, 성장을 돕는 문해력 브랜드
+   ============================================================= */
+
+/* ---------- Web fonts ----------
+   ROLES
+   • HS산토끼체 2.0  → TITLES / HEADINGS (display handwriting)
+   • IBM Plex Sans KR → BODY / REGULAR TEXT (UI + paragraphs)
+   • Space Grotesk    → Latin numerals / small caption labels
+   • Pretendard       → Korean fallback on systems without Plex
+   --------------------------------------------------------------- */
+
+/* HS산토끼체 2.0 — heading face (licensed .ttf from HS Foundry) */
+@font-face {
+  font-family: "HS Santokki";
+  src: url("fonts/HSSanTokki2.0_2024_.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+:root {
+  /* =========================================================
+     COLOR TOKENS
+     ========================================================= */
+
+  /* — Primary (per brand notes: #9570CD anchors the palette) — */
+  --gliit-purple:        #9570CD;   /* PRIMARY — print + brand anchor */
+  --gliit-purple-digital:#A97AF0;   /* digital screens (slightly more vivid) */
+  --gliit-purple-soft:   #CDA9FF;   /* tints / surfaces */
+  --gliit-purple-muted:  #BC98F1;   /* secondary tint */
+  --gliit-purple-deep:   #9570CD;   /* equal to primary, named for context */
+
+  /* — Secondary palette (warm + cool playmates) — */
+  --gliit-orange:        #F09B7A;
+  --gliit-yellow:        #F0EA7A;
+  --gliit-blue:          #75BCFF;
+  --gliit-pink:          #F07AAF;
+  --gliit-pink-hot:      #FF5885;   /* CTA accent seen on app mocks */
+
+  /* — Neutrals — */
+  --gliit-onyx:          #0E1318;   /* near-black text */
+  --gliit-onyx-soft:     #1B1B1C;   /* card / chip dark fill */
+  --gliit-ink:           #231F20;   /* illustration ink */
+  --gliit-graphite:      #394C60;   /* secondary text / caption ink */
+  --gliit-graphite-muted:rgba(57,76,96,0.15); /* mono symbol on light tile */
+  --gliit-stone:         #9B92A8;   /* faded helper text */
+  --gliit-mist:          #E2E4E7;   /* subtle borders */
+  --gliit-haze:          #EBECF0;   /* canvas / artboard background */
+  --gliit-paper:         #F8F9F9;   /* tile / surface background */
+  --gliit-snow:          #F5F5F5;   /* alt surface */
+  --gliit-white:         #FFFFFF;
+
+  /* — Semantic foreground — */
+  --fg-1:                var(--gliit-onyx);          /* primary text */
+  --fg-2:                rgba(13,18,22,0.86);        /* body */
+  --fg-3:                rgba(36,49,61,0.70);        /* secondary */
+  --fg-4:                rgba(36,49,61,0.40);        /* tertiary / captions */
+  --fg-inverse:          var(--gliit-white);
+
+  /* — Semantic surfaces — */
+  --bg-canvas:           var(--gliit-white);
+  --bg-surface:          var(--gliit-paper);
+  --bg-surface-2:        var(--gliit-haze);
+  --bg-dark:             var(--gliit-onyx);
+
+  /* — Borders & shadows — */
+  --border-hairline:     1px solid var(--gliit-mist);
+  --border-soft:         1px solid rgba(255,255,255,0.10);
+  --shadow-card:         0 1px 2px rgba(14,19,24,0.04), 0 8px 24px rgba(14,19,24,0.06);
+  --shadow-pop:          0 2px 8px rgba(14,19,24,0.06), 0 20px 48px rgba(14,19,24,0.10);
+  --shadow-button:       0 1px 0 rgba(14,19,24,0.04), 0 2px 6px rgba(14,19,24,0.08);
+
+  /* =========================================================
+     TYPOGRAPHY TOKENS
+     ========================================================= */
+
+  /* — Family stacks —
+     Display: HS산토끼체 2.0 is a Korean handwriting font (not Google Fonts).
+     We register the name first so a locally-installed copy is used if available,
+     then fall back to Gaegu (similar feel) and the body stack.
+  */
+  --font-display: "HS Santokki", "HS산토끼체 2.0", "HS Santokki 2.0", "IBM Plex Sans KR", system-ui, sans-serif;
+  --font-body:    "IBM Plex Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+  --font-mono-num:"Space Grotesk", "IBM Plex Sans KR", system-ui, sans-serif;
+
+  /* — Type scale (1920×1080 deck units; bodies scale down on web) — */
+  --fs-display-xl: 56px;   /* hero handwriting (HS산토끼체) */
+  --fs-display:    32px;   /* section title (handwriting) */
+  --fs-title:      32px;   /* IBM Plex Bold heading */
+  --fs-subtitle:   20px;   /* IBM Plex Medium */
+  --fs-body:       16px;
+  --fs-body-lg:    20px;
+  --fs-caption:    14px;
+  --fs-caption-sm: 12px;
+  --fs-micro:      11px;
+
+  /* — Line heights — */
+  --lh-tight:  1.00;
+  --lh-snug:   1.20;
+  --lh-normal: 1.40;
+  --lh-relaxed:1.60;
+
+  /* — Radii (deck uses 8 / 16 / 24; symbol uses ~33% of size for rounded square) — */
+  --r-1:   4px;
+  --r-2:   8px;
+  --r-3:   12px;
+  --r-4:   16px;
+  --r-5:   24px;
+  --r-symbol: 33.33%; /* logo lockup rounded-square corner */
+
+  /* — Spacing (8 / 16 / 24 / 40 / 80 from slides) — */
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:  16px;
+  --sp-4:  24px;
+  --sp-5:  40px;
+  --sp-6:  80px;
+  --sp-7: 120px;
+}
+
+/* =========================================================
+   SEMANTIC TYPE STYLES
+   ========================================================= */
+
+.gl-h1, h1.gl {
+  font-family: var(--font-display);
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-tight);
+  color: var(--fg-1);
+  letter-spacing: -0.01em;
+}
+.gl-h2, h2.gl {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  line-height: var(--lh-tight);
+  color: var(--fg-1);
+}
+.gl-title {  /* sans-serif title pairing */
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  line-height: var(--lh-snug);
+  color: var(--fg-1);
+}
+.gl-subtitle {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-subtitle);
+  line-height: var(--lh-normal);
+  color: var(--fg-2);
+}
+.gl-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+.gl-body-lg {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-2);
+}
+.gl-caption {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: var(--fs-caption);
+  line-height: var(--lh-normal);
+  color: var(--fg-3);
+}
+.gl-num {
+  font-family: var(--font-mono-num);
+  font-weight: 500;
+  font-size: var(--fs-caption-sm);
+  letter-spacing: 0.02em;
+  color: var(--fg-3);
+}
+.gl-mono {
+  font-family: var(--font-mono-num);
+  font-weight: 400;
+  font-size: var(--fs-caption-sm);
+  color: var(--fg-3);
+}
+
+/* ---- preview/card.css ---- */
+/* Preview card shared styles — every card is a 700px wide HTML page
+   that renders one design-system concept against the brand canvas. */
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-canvas);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.card {
+  width: 700px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* circled number chip — the system's signature caption marker */
+.gl-chip {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: var(--gliit-onyx);
+  color: var(--fg-inverse);
+  font-family: var(--font-mono-num);
+  font-weight: 500;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.gl-chip.lg { width: 34px; height: 34px; border-radius: 11px; font-size: 14px; }
+
+.label {
+  font-family: var(--font-mono-num);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.row { display: flex; gap: 8px; }
+.col { display: flex; flex-direction: column; gap: 8px; }

@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<title>글잇 — 초등 홈 독서논술 PT | 책 읽는 아이에서, 생각을 쓰는 아이로</title>
+<meta name="description" content="초등 3학년부터 시작하는 홈 독서논술 퍼스널 트레이닝. 책 읽기부터 독후활동·글쓰기까지, 우리 아이에게 꼭 맞는 루틴을 집에서 챙기세요. 1분 신청 · 결제 전 상담 · 월 98,000원부터.">
+<link rel="canonical" href="https://home.gliit.me/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="글잇">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://home.gliit.me/">
+<meta property="og:title" content="글잇 — 초등 홈 독서논술 PT">
+<meta property="og:description" content="책 읽고 독후활동까지, 집에서도 제대로. 우리 아이에게 꼭 맞는 독서논술 퍼스널 트레이닝.">
+<meta property="og:image" content="https://home.gliit.me/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="밤하늘 배경의 글잇 홈 독서논술 PT 소개">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="글잇 — 초등 홈 독서논술 PT">
+<meta name="twitter:description" content="책 읽고 독후활동까지, 집에서도 제대로. 우리 아이에게 꼭 맞는 독서논술 퍼스널 트레이닝.">
+<meta name="twitter:image" content="https://home.gliit.me/assets/og-image.jpg">
+
+<meta name="theme-color" content="#0B1030">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="image" href="assets/hero-night-sky.jpg" fetchpriority="high">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/ds/gliit.css">
+
+<style>
+  :root {
+    --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    --font-display: "IBM Plex Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    --font-mono-num: "Space Grotesk", "Pretendard", system-ui, sans-serif;
+  }
+  html, body { margin:0; padding:0; background:#FFFFFF; font-family: var(--font-body); }
+  * { box-sizing: border-box; }
+  a { color: var(--gliit-purple); text-decoration: none; }
+  a:hover { color: #7d59b6; }
+
+  /* 원본 image-slot(웹컴포넌트)을 정적 마크업으로 옮긴 것 */
+  .isl { display:block; position:relative; width:100%; height:100%; aspect-ratio:3/2;
+         overflow:hidden; background:rgba(127,127,127,.08); }
+  .isl > img { position:absolute; inset:0; width:100%; height:100%;
+               object-fit:cover; object-position:center; display:block; }
+
+  /* 원본 style-hover 속성이 만들던 규칙 */
+  .scp0:hover { opacity: .86 !important; }
+  .scp1:hover { opacity: .9 !important; }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: .01ms !important; animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+<!-- TODO: 상담 신청 CTA(a[href="#consult"], 4개)는 아직 섹션 스크롤만 합니다.
+     실제 신청 폼/채널 주소가 정해지면 href를 교체하세요. -->
+<div style="font-family: var(--font-body); color: var(--fg-2); background: rgb(255, 255, 255); padding-bottom: 96px; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0px; z-index: 40; background: rgba(255, 255, 255, 0.94); border-bottom: 1px solid var(--gliit-mist);">
+    <div style="max-width: 1120px; margin: 0px auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <img src="assets/gliit-logo-new.png" alt="글잇" style="height: 36px; width: auto; display: block;">
+      <div style="display: flex; align-items: center; gap: 16px;">
+        <span style="font-size: 14px; font-weight: 500; color: var(--fg-4);">초등 3학년부터 · 초등 홈 독서논술 PT</span>
+        <a href="#consult" class="scp0" style="display: inline-flex; align-items: center; padding: 10px 20px; border-radius: 999px; background: rgb(139, 61, 255); color: rgb(255, 255, 255); font-size: 15px; font-weight: 600; box-shadow: var(--shadow-button);">학습 상담 신청하기</a>
+      </div>
+    </div>
+  </header>
+
+  <section style="position: relative; padding: 120px 24px 112px; background: rgb(11, 16, 48); overflow: hidden; min-height: 620px; display: flex; align-items: center;">
+    <div style="position: absolute; inset: 0px; background-image: url(&quot;assets/hero-night-sky.jpg&quot;); background-size: cover; background-position: right center;"></div>
+    <div style="position: absolute; inset: 0px; background: linear-gradient(100deg, rgba(9, 13, 38, 0.88) 0%, rgba(9, 13, 38, 0.62) 32%, rgba(9, 13, 38, 0) 60%, rgba(9, 13, 38, 0) 100%); pointer-events: none;"></div>
+    <div style="position: relative; width: 100%; max-width: 1120px; margin: 0px auto;">
+      <div style="max-width: 620px;">
+        <span style="display: inline-block; padding: 7px 16px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); color: rgb(255, 255, 255); font-size: 14px; font-weight: 600; letter-spacing: -0.01em;">초등 홈 독서논술 PT</span>
+        <h1 style="font-family: var(--font-display); font-size: clamp(38px, 5vw, 58px); line-height: 1.18; color: rgb(255, 255, 255); margin: 24px 0px 0px; letter-spacing: -0.02em; text-wrap: pretty;">책 읽는 아이에서,<br>생각을 쓰는 아이로</h1>
+        <p style="font-size: 18px; line-height: 1.65; color: rgba(255, 255, 255, 0.84); margin: 24px 0px 0px; max-width: 520px; text-wrap: pretty;">책 읽고 독후활동까지, 집에서도 제대로 챙길 수는 없을까요?<br>우리 아이에게 꼭 맞는 독서논술 퍼스널 트레이닝을 선물하세요.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start; margin-top: 36px;">
+          <a href="#consult" class="scp0" style="display: inline-flex; align-items: center; justify-content: center; padding: 18px 36px; border-radius: 14px; background: rgb(139, 61, 255); color: rgb(255, 255, 255); font-size: 18px; font-weight: 700; box-shadow: var(--shadow-button);">학습 상담 신청하기</a>
+          <span style="font-size: 14px; color: rgba(255, 255, 255, 0.7);">1분 신청 · 결제 전 상담 · 월 98,000원부터</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section style="padding: 60px 24px 0px;">
+    <div style="max-width: 1120px; margin: 0px auto; background: var(--gliit-onyx); border-radius: 24px; padding: 48px 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px;">
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono-num); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45);">전국 학교에서 사용</span>
+          <span style="font-size: 28px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: -0.01em;">130여 개교</span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <span style="font-family: var(--font-mono-num); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45);">KERIS 우수 실증 사례</span>
+          <span style="font-size: 28px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: -0.01em;">공교육에서 검증 완료</span>
+        </div><div style="display: flex; flex-direction: column; gap: 10px; width: 291px; height: 55px;">
+          <span style="font-family: var(--font-mono-num); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.45);">글쓰기 효능감·글 구조 이해 향상</span>
+          <span style="font-size: 28px; font-weight: 700; color: rgb(255, 255, 255); letter-spacing: -0.01em;">확인된 변화</span>
+        </div>
+        
+      </div>
+      <p style="margin: 32px 0px 0px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 18px; color: rgba(255, 255, 255, 0.62);">글잇의 학교 현장 적용 경험을 바탕으로 가정용 프로그램을 설계했습니다.</p>
+    </div>
+  </section>
+  
+
+  <section style="padding: 180px 24px 100px;">
+    <div style="max-width: 1120px; margin: 0px auto;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 44px); line-height: 1.3; color: var(--gliit-onyx); margin: 0px; max-width: 820px; text-wrap: pretty;">바뀌는 입시, 학교의 논서술형 평가...<br><span style="color: rgb(139, 61, 255);">우리 아이는 준비되어 있나요?</span></h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px;">
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="position: relative; width: 100%; aspect-ratio: 3 / 2; border-radius: 8px; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="problem-1" style=""><img src="assets/slots/problem-1.webp" alt="일정에 밀려 책을 못 읽는 아이" loading="lazy" decoding="async"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center;">1</span>
+              <span style="font-size: 20px; font-weight: 700; color: var(--gliit-onyx);">읽을 책은 많지만</span>
+            </div>
+            <p style="margin: 0px; font-size: 16px; line-height: 1.6; color: var(--fg-3);">다른 과목 공부에 밀려 꾸준하게 독서 시간을 챙기기 어려워요.</p>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="position: relative; width: 100%; aspect-ratio: 3 / 2; border-radius: 8px; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="problem-2" style=""><img src="assets/slots/problem-2.webp" alt="책만 덮고 끝나는 독서 장면" loading="lazy" decoding="async"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center;">2</span>
+              <span style="font-size: 20px; font-weight: 700; color: var(--gliit-onyx);">읽고 나면 끝</span>
+            </div>
+            <p style="margin: 0px; font-size: 16px; line-height: 1.6; color: var(--fg-3);">책은 많이 읽지만, 내용을 정리하거나 자기 생각으로 발전시키는 활동은 부족해요.</p>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="position: relative; width: 100%; aspect-ratio: 3 / 2; border-radius: 8px; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="problem-3" style=""><img src="assets/slots/problem-3.webp" alt="글쓰기 앞에서 막막해하는 아이" loading="lazy" decoding="async"></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center;">3</span>
+              <span style="font-size: 20px; font-weight: 700; color: var(--gliit-onyx);">말은 풍부하지만</span>
+            </div>
+            <p style="margin: 0px; font-size: 16px; line-height: 1.6; color: var(--fg-3);">글로 쓰면 생각의 순서가 흐트러지고, 논리와 구조를 잡는 데 어려움을 느껴요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 112px 24px 0px;">
+    <div style="max-width: 1120px; margin: 0px auto; background: rgb(251, 250, 254); border-radius: 24px; padding: 64px 40px;">
+      <p style="font-family: var(--font-mono-num); font-size: 16px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gliit-purple); margin: 0px;">글잇의 핵심 원리</p>
+      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 42px); line-height: 1.32; color: var(--gliit-onyx); margin: 20px 0px 0px; max-width: 1040px; text-wrap: pretty; height: 110px; width: 100%;">책은 읽고 끝나는 것보다,<br>자기 언어로 다시 표현할 때 비로소 내 것이 됩니다.</h2>
+      <div style="margin-top: 48px; display: flex; flex-direction: column; gap: 32px; align-items: center;">
+        <div style="position: relative; width: 100%; height: 520px; overflow: hidden;">
+          <div style="position: absolute; top: 50%; left: 50%; width: min(380px, 72vw); background: rgb(255, 255, 255); border: 1px solid var(--gliit-mist); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-pop); cursor: pointer; transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1), opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); transform: translate3d(calc(-50% + 0px), -50%, 0px) scale(1); opacity: 1; z-index: 10; pointer-events: auto;" data-gl-card="0">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: var(--font-mono-num); font-size: 14px; color: rgb(139, 61, 255);">01</span>
+              <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.35;">책 읽기</span>
+            </div>
+            <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: rgb(239, 240, 243);">
+              <div class="isl" data-slot="principle-1" style="border-radius:12px"><img src="assets/slots/principle-1.webp" alt="아이가 책을 읽는 장면" loading="lazy" decoding="async"></div>
+              <div style="position: absolute; inset: 0px; background: rgb(11, 16, 48); pointer-events: none; transition: opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 0;" data-gl-scrim="0"></div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 50%; left: 50%; width: min(380px, 72vw); background: rgb(255, 255, 255); border: 1px solid var(--gliit-mist); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-pop); cursor: pointer; transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1), opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); transform: translate3d(calc(-50% + 340px), -50%, 0px) scale(0.78); opacity: 1; z-index: 9; pointer-events: auto;" data-gl-card="1">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: var(--font-mono-num); font-size: 14px; color: rgb(139, 61, 255);">02</span>
+              <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.35;">핵심 내용 확인</span>
+            </div>
+            <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: rgb(239, 240, 243);">
+              <div class="isl" data-slot="principle-2" style="border-radius:12px"><img src="assets/slots/principle-2.webp" alt="핵심 내용 정리 화면" loading="lazy" decoding="async"></div>
+              <div style="position: absolute; inset: 0px; background: rgb(11, 16, 48); pointer-events: none; transition: opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.55;" data-gl-scrim="1"></div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 50%; left: 50%; width: min(380px, 72vw); background: rgb(255, 255, 255); border: 1px solid var(--gliit-mist); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-pop); cursor: pointer; transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1), opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); transform: translate3d(calc(-50% + 680px), -50%, 0px) scale(0.78); opacity: 0; z-index: 8; pointer-events: none;" data-gl-card="2">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: var(--font-mono-num); font-size: 14px; color: rgb(139, 61, 255);">03</span>
+              <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.35;">AI와 생각 대화</span>
+            </div>
+            <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: rgb(239, 240, 243);">
+              <div class="isl" data-slot="principle-3" style="border-radius:12px"><img src="assets/slots/principle-3.webp" alt="AI와 대화하는 화면" loading="lazy" decoding="async"></div>
+              <div style="position: absolute; inset: 0px; background: rgb(11, 16, 48); pointer-events: none; transition: opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.55;" data-gl-scrim="2"></div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 50%; left: 50%; width: min(380px, 72vw); background: rgb(255, 255, 255); border: 1px solid var(--gliit-mist); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-pop); cursor: pointer; transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1), opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); transform: translate3d(calc(-50% - 680px), -50%, 0px) scale(0.78); opacity: 0; z-index: 8; pointer-events: none;" data-gl-card="3">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: var(--font-mono-num); font-size: 14px; color: rgb(139, 61, 255);">04</span>
+              <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.35;">개요 구성</span>
+            </div>
+            <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: rgb(239, 240, 243);">
+              <div class="isl" data-slot="principle-4" style="border-radius:12px"><img src="assets/slots/principle-4.webp" alt="개요 작성 화면" loading="lazy" decoding="async"></div>
+              <div style="position: absolute; inset: 0px; background: rgb(11, 16, 48); pointer-events: none; transition: opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.55;" data-gl-scrim="3"></div>
+            </div>
+          </div>
+          <div style="position: absolute; top: 50%; left: 50%; width: min(380px, 72vw); background: rgb(255, 255, 255); border: 1px solid var(--gliit-mist); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; gap: 16px; box-shadow: var(--shadow-pop); cursor: pointer; transition: transform 560ms cubic-bezier(0.4, 0, 0.2, 1), opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); transform: translate3d(calc(-50% - 340px), -50%, 0px) scale(0.78); opacity: 1; z-index: 9; pointer-events: auto;" data-gl-card="4">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <span style="font-family: var(--font-mono-num); font-size: 15px; color: rgb(139, 61, 255);">05</span>
+              <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.35;">한 편의 글 완성</span>
+            </div>
+            <div style="position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden; background: rgb(239, 240, 243);">
+              <div class="isl" data-slot="principle-5" style="border-radius:12px"><img src="assets/slots/principle-5.webp" alt="완성된 글 화면" loading="lazy" decoding="async"></div>
+              <div style="position: absolute; inset: 0px; background: rgb(11, 16, 48); pointer-events: none; transition: opacity 560ms cubic-bezier(0.4, 0, 0.2, 1); opacity: 0.55;" data-gl-scrim="4"></div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;">
+          <button aria-label="slide 1" style="width: 9px; height: 9px; padding: 0px; border: 0px; border-radius: 50%; cursor: pointer; transition: background 240ms; background: rgb(139, 61, 255);" data-gl-dot="0"></button>
+          <button aria-label="slide 2" style="width: 9px; height: 9px; padding: 0px; border: 0px; border-radius: 50%; cursor: pointer; transition: background 240ms; background: var(--gliit-mist);" data-gl-dot="1"></button>
+          <button aria-label="slide 3" style="width: 9px; height: 9px; padding: 0px; border: 0px; border-radius: 50%; cursor: pointer; transition: background 240ms; background: var(--gliit-mist);" data-gl-dot="2"></button>
+          <button aria-label="slide 4" style="width: 9px; height: 9px; padding: 0px; border: 0px; border-radius: 50%; cursor: pointer; transition: background 240ms; background: var(--gliit-mist);" data-gl-dot="3"></button>
+          <button aria-label="slide 5" style="width: 9px; height: 9px; padding: 0px; border: 0px; border-radius: 50%; cursor: pointer; transition: background 240ms; background: var(--gliit-mist);" data-gl-dot="4"></button>
+        </div>
+      </div>
+      </div>
+    </section></div>
+  
+
+  <section style="padding: 56px 0px 0px;">
+    <div style="width: 100%; background: var(--gliit-purple); padding: 48px 24px;">
+      <p style="max-width: 1040px; margin: 0px auto; font-size: clamp(22px, 2.4vw, 28px); font-weight: 600; line-height: 1.55; color: rgb(255, 255, 255); text-align: center; text-wrap: pretty; width: 100%;">글잇은 완성된 글만 평가하지 않습니다. <br>아이가 책 내용을 이해하고, 생각을 확장하고, 글의 구조를 만드는 전 과정을 돕습니다.</p>
+    </div>
+  </section>
+  
+
+  <section style="padding: 112px 24px 0px;">
+    <div style="max-width: 1120px; margin: 0px auto; display: flex; flex-direction: column; gap: 80px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        <div>
+          <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">1</span>
+          <h3 style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--gliit-onyx); margin: 16px 0px 0px; line-height: 1.3; letter-spacing: -0.01em;">아이에게 맞춘 학습 관리</h3>
+          <p style="margin: 16px 0px 0px; font-size: 17px; line-height: 1.7; color: var(--fg-3); max-width: 460px; text-wrap: pretty;">약속한 학습 스케줄에 따라 책 읽기부터 글 완성까지 진행합니다. 무엇을 해야 할지 매번 부모가 챙기지 않아도 됩니다.</p>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 11; border-radius: 16px; overflow: hidden; background: var(--gliit-paper); box-shadow: var(--shadow-card);">
+          <div class="isl" data-slot="sol-1" style=""><img src="assets/slots/sol-1.webp" alt="주간 학습 계획 캘린더 화면" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 11; border-radius: 16px; overflow: hidden; background: var(--gliit-paper); box-shadow: var(--shadow-card);">
+          <div class="isl" data-slot="sol-2" style=""><img src="assets/slots/sol-2.webp" alt="AI와 독서 대화 화면" loading="lazy" decoding="async"></div>
+        </div>
+        <div>
+          <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">2</span>
+          <h3 style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--gliit-onyx); margin: 16px 0px 0px; line-height: 1.3; letter-spacing: -0.01em;">읽은 것을 자기 언어로</h3>
+          <p style="margin: 16px 0px 0px; font-size: 17px; line-height: 1.7; color: var(--fg-3); max-width: 460px; text-wrap: pretty;">핵심 내용을 요약하고 질문에 답하며, 책에서 얻은 생각을 자기 경험과 연결합니다.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        <div>
+          <span style="width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-onyx-soft); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: inline-flex; align-items: center; justify-content: center;">3</span>
+          <h3 style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--gliit-onyx); margin: 16px 0px 0px; line-height: 1.3; letter-spacing: -0.01em;">교과와 연결되는 글쓰기</h3>
+          <p style="margin: 16px 0px 0px; font-size: 17px; line-height: 1.7; color: var(--fg-3); max-width: 460px; text-wrap: pretty;">설명하는 글, 주장하는 글 등 학교에서 배우는 글의 구조를 익히고 직접 써봅니다.</p>
+        </div>
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 11; border-radius: 16px; overflow: hidden; background: var(--gliit-paper); box-shadow: var(--shadow-card);">
+          <div class="isl" data-slot="sol-3" style=""><img src="assets/slots/sol-3.webp" alt="개요가 글로 발전하는 전후 화면" loading="lazy" decoding="async"></div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: center;">
+        <div style="position: relative; width: 100%; aspect-ratio: 16 / 11; border-radius: 16px; overflow: hidden; background: var(--gliit-paper); box-shadow: var(--shadow-card);">
+          <div class="isl" data-slot="sol-4" style=""><img src="assets/slots/sol-4.webp" alt="선생님 화상 코칭 화면" loading="lazy" decoding="async"></div>
+        </div>
+        <div>
+          <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: inline-flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">4</span>
+          <h3 style="font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--gliit-onyx); margin: 16px 0px 0px; line-height: 1.3; letter-spacing: -0.01em;">집에서도 선생님과 함께</h3>
+          <p style="margin: 16px 0px 0px; font-size: 17px; line-height: 1.7; color: var(--fg-3); max-width: 460px; text-wrap: pretty;">학습 진도와 어려움을 선생님이 확인하고, 주 1회 30분 화상으로 아이에게 필요한 코칭을 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 112px 24px 0px;">
+    <div style="max-width: 1120px; margin: 80px auto;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 42px); line-height: 1.3; color: var(--gliit-onyx); margin: 0px;">글잇과 함께하는 아이의 한 주</h2><div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 44px;">
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">1</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">관심 있는 책 선택</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-1" style="border-radius:50%"></div>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">2</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">정해진 분량의 책 읽기</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-2" style="border-radius:50%"><img src="assets/slots/week-2.webp" alt="책 읽는 아이" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">3</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">핵심 내용 확인과 독서 대화</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-3" style="border-radius:50%"><img src="assets/slots/week-3.webp" alt="AI와 독서 대화 화면" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">4</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">생각을 개요로 구조화</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-4" style="border-radius:50%"><img src="assets/slots/week-4.webp" alt="개요를 구조화하는 화면" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">5</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">한 편의 글 완성</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-5" style="border-radius:50%"><img src="assets/slots/week-5.webp" alt="완성된 글 화면" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+        <div style="background: var(--gliit-paper); border-radius: 16px; padding: 28px 24px; display: flex; flex-direction: column; align-items: center; gap: 20px; text-align: center;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+            <span style="width: 24px; height: 24px; border-radius: 8px; color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; display: flex; align-items: center; justify-content: center; background-color: rgb(27, 27, 28);">6</span>
+            <span style="font-size: 18px; font-weight: 700; color: var(--gliit-onyx); line-height: 1.45;">선생님 코칭과 다음 주 계획</span>
+          </div>
+          <div style="position: relative; width: 160px; height: 160px; border-radius: 50%; overflow: hidden; background: rgb(239, 240, 243);">
+            <div class="isl" data-slot="week-6" style="border-radius:50%"><img src="assets/slots/week-6.webp" alt="선생님 화상 코칭 장면" loading="lazy" decoding="async"></div>
+          </div>
+        </div>
+      </div><div style="margin-top: 24px; padding: 39px; border-radius: 16px; font-size: 26px; font-weight: 600; color: var(--gliit-white); background-color: rgb(111, 76, 168); text-align: center;">매주 독서 1회 이상 · 완성 글 1편 · 화상 코칭 30분</div>
+      
+      
+    </div>
+  </section>
+
+  <section style="padding: 112px 24px 40px;">
+    <div style="max-width: 1120px; margin: 0px auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: start;">
+      <div>
+        <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.3; color: var(--gliit-onyx); margin: 0px; text-wrap: pretty;">3개월 뒤,<br>이런 변화를 목표로 합니다.</h2>
+        <div style="position: relative; width: 100%; max-width: 280px; aspect-ratio: 1 / 1; margin-top: 32px; opacity: 0.9;">
+          
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <div style="display: flex; gap: 16px; align-items: center; padding: 22px 0px; border-bottom: 1px solid var(--gliit-mist);">
+          <span style="flex: 0 0 auto; width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-purple); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">1</span>
+          <span style="font-size: 20px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500;">부모가 재촉하지 않아도 정해진 독서·글쓰기 일정 시작하기</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; padding: 22px 0px; border-bottom: 1px solid var(--gliit-mist);">
+          <span style="flex: 0 0 auto; width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-orange); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">2</span>
+          <span style="font-size: 20px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500;">읽은 책의 핵심 내용을 자기 말로 요약하기</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; padding: 22px 0px; border-bottom: 1px solid var(--gliit-mist);">
+          <span style="flex: 0 0 auto; width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-blue); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</span>
+          <span style="font-size: 20px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500;">질문에 단답이 아닌 근거와 이유를 붙여 답하기</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; padding: 22px 0px; border-bottom: 1px solid var(--gliit-mist);">
+          <span style="flex: 0 0 auto; width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-pink); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">4</span>
+          <span style="font-size: 20px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500;">개요에 따라 문단의 순서를 구성하기</span>
+        </div>
+        <div style="display: flex; gap: 16px; align-items: center; padding: 22px 0px;">
+          <span style="flex: 0 0 auto; width: 24px; height: 24px; border-radius: 8px; background: var(--gliit-yellow); color: rgb(255, 255, 255); font-family: var(--font-mono-num); font-size: 12px; font-weight: 600; display: flex; align-items: center; justify-content: center;">5</span>
+          <span style="font-size: 20px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500;">매주 한 편의 글을 끝까지 완성하기</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 112px 24px; background: rgb(241, 234, 251);">
+    <div style="max-width: 1120px; margin: 60px auto;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.34; color: var(--gliit-onyx); margin: 0px; max-width: 820px; text-wrap: pretty;">학교 선생님들이 먼저 요청해주셨습니다.<br>“가정에서도 사용할 수 없나요?”</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px;">
+        <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; border: 1px solid rgb(139, 61, 255); font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); background-color: rgb(149, 112, 205);">지속 동기</span>
+          <p style="margin: 0px; font-size: 19px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500; text-wrap: pretty;">“글쓰기 싫어하던 아이가 먼저 글잇 수업을 하자고 했어요.”</p>
+          <span style="font-size: 14px; color: var(--fg-4); margin-top: auto;">조*현 선생님</span>
+        </div>
+        <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; border: 1px solid rgb(149, 112, 205); font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); background-color: rgb(149, 112, 205);">글쓰기 부담 감소</span>
+          <p style="margin: 0px; font-size: 19px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500; text-wrap: pretty;">“혼자 쓸 때는 막막했는데, 질문에 답하다 보니 글이 술술 써졌어요.”</p>
+          <span style="font-size: 14px; color: var(--fg-4); margin-top: auto;">황*빈 학생</span>
+        </div>
+        <div style="background: rgb(255, 255, 255); border-radius: 16px; padding: 32px 24px; display: flex; flex-direction: column; gap: 20px;">
+          <span style="align-self: flex-start; padding: 6px 14px; border-radius: 999px; border: 1px solid rgb(139, 61, 255); font-size: 13px; font-weight: 600; color: rgb(255, 255, 255); background-color: rgb(149, 112, 205);">사고 확장</span>
+          <p style="margin: 0px; font-size: 19px; line-height: 1.6; color: var(--gliit-onyx); font-weight: 500; text-wrap: pretty;">“내가 생각해보지 못했던 생각을 열어줬어요.”</p>
+          <span style="font-size: 14px; color: var(--fg-4); margin-top: auto;">이*리 학생</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" style="padding: 112px 24px 120px;">
+    <div style="max-width: 1120px; margin: 0px auto;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(30px, 3.6vw, 44px); line-height: 1.3; color: var(--gliit-onyx); margin: 0px;">학원에 아이를 맞추지 마세요.<br>더 편리하게, 더 세심하게. 월 98,000원부터.</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 44px;">
+        <div style="border: 1px solid var(--gliit-mist); border-radius: 24px; padding: 32px; background: rgb(255, 255, 255); display: flex; flex-direction: column; gap: 24px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx);">3개월</span>
+            <span style="font-size: 13px; color: var(--fg-4);">먼저 경험해보고 싶은 가정</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: var(--font-mono-num); font-size: 13px; color: var(--fg-4);">월 환산</span>
+            <span style="font-size: 36px; font-weight: 700; color: var(--gliit-onyx); letter-spacing: -0.02em;">119,000원</span>
+            <span style="font-size: 15px; color: var(--fg-3);">총 이용료 357,000원</span>
+          </div>
+        </div>
+        <div style="position: relative; border-color: rgb(139, 61, 255); border-top-style: ; border-top-width: ; border-right-style: ; border-right-width: ; border-bottom-style: ; border-bottom-width: ; border-left-style: ; border-left-width: ; border-image-source: ; border-image-slice: ; border-image-width: ; border-image-outset: ; border-image-repeat: ; border-radius: 24px; padding: 32px; background: rgb(251, 250, 254); display: flex; flex-direction: column; gap: 24px; box-shadow: var(--shadow-card);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+            <span style="font-size: 22px; font-weight: 700; color: var(--gliit-onyx);">6개월</span>
+            <span style="padding: 6px 14px; border-radius: 999px; color: rgb(255, 255, 255); font-size: 13px; font-weight: 600; background-color: rgb(139, 61, 255);">추천 · 월 21,000원 절약</span>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <span style="font-family: var(--font-mono-num); font-size: 13px; color: var(--fg-4);">월 환산</span>
+            <span style="font-size: 36px; font-weight: 700; color: rgb(139, 61, 255); letter-spacing: -0.02em;">98,000원</span>
+            <span style="font-size: 15px; color: var(--fg-3);">총 이용료 588,000원 · 습관 형성이 목표인 가정</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="position: relative; margin-top: 24px; border-radius: 24px; padding: 40px; overflow: hidden; display: flex; flex-direction: column; gap: 12px; background: linear-gradient(120deg, rgb(91, 127, 224) 0%, rgb(117, 188, 255) 100%);">
+        <div style="position: absolute; top: 0px; right: 15%; bottom: 0px; width: 180px;">
+          <div class="isl" data-slot="refund-bg" style=""><img src="assets/slots/refund-bg.webp" alt="환불 보장 이미지" loading="lazy" decoding="async"></div>
+        </div>
+        <span style="position: relative; font-family: var(--font-mono-num); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255, 255, 255, 0.85);">환불 보장</span>
+        <span style="position: relative; max-width: 60%; font-size: clamp(20px, 2.2vw, 26px); font-weight: 700; color: rgb(255, 255, 255); line-height: 1.45;">처음 7일 동안 충분히 경험해보세요.<br>만족하지 않으면 전액 환불해드립니다.</span>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <section style="position: relative; padding: 120px 24px;">
+    <div style="position: absolute; inset: 0px; display: flex; align-items: flex-end;">
+      <div class="isl" data-slot="brand-story-bg" style="width: 100%; height: 100%"><img src="assets/brand-story-team.jpg" alt="브랜드 스토리 배경 이미지" loading="lazy" decoding="async"></div>
+      <div style="position: absolute; inset: 0px; background: linear-gradient(200deg, rgb(9, 8, 15), rgba(23, 19, 31, 0.92), rgba(55, 61, 63, 0.92), rgba(9, 13, 38, 0) 80%);"></div>
+    </div>
+    
+    <div style="position: relative; max-width: 1120px; margin: 0px auto;">
+      <div style="position: relative; display: flex; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 56px; justify-content: space-between;">
+        <div style="width: 591px;">
+          <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.4vw, 40px); line-height: 1.34; color: rgb(255, 255, 255); margin: 0px; text-align: left; text-wrap: pretty; width: 591px;">부족해서 저렴한 것이 아닙니다.<br>교육비가 쓰이는 구조를 바꿨습니다.</h2>
+          <p style="margin: 16px 0px 0px; font-size: 15px; line-height: 1.6; color: rgba(255, 255, 255, 0.72); text-align: left;">선생님과 AI가 양질의 교육을 담당하고, 학원 공간과 통학에 드는 비용을 줄였습니다.</p>
+        </div>
+        <div style="text-align: left; width: 475px; height: 450px; align-self: flex-end; display: flex; flex-direction: column; justify-content: flex-end;">
+          <p style="margin: 0px; font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.88); text-wrap: pretty; text-align: right;">“아이에게 좋은 독서논술 교육은 꼭 매달 20~30만원을 써야 할까?”<br>글잇 홈 PT는 이 문제의식에서 시작됐습니다.</p>
+          <div style="margin-top: 24px; display: flex; flex-direction: column; gap: 8px;">
+            <p style="margin: 0px; font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.88); text-align: right;">아이에게 필요한 책과 훈련을 찾고,</p>
+            <p style="margin: 0px; font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.88); text-align: right;">꾸준히 읽고 쓰게 만들고,</p>
+            <p style="margin: 0px; font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.88); text-align: right;">생각하는 과정을 돕고,</p>
+            <p style="margin: 0px; font-size: 18px; line-height: 1.8; color: rgba(255, 255, 255, 0.88); text-align: right;">선생님이 제대로 했는지 확인하는 것.</p>
+          </div>
+          <p style="margin: 28px 0px 0px; font-size: 22px; font-weight: 700; line-height: 1.5; color: rgb(255, 255, 255); text-wrap: pretty; text-align: right;">글잇은 좋은 교육의 핵심에만 집중합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 112px 24px 0px;">
+    <div style="max-width: 840px; margin: 0px auto;">
+      <h2 style="font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 38px); line-height: 1.3; color: var(--gliit-onyx); margin: 0px;">자주 묻는 질문</h2>
+      <div style="margin-top: 32px; border-top: 1px solid var(--gliit-mist);">
+        <div style="border-bottom: 1px solid var(--gliit-mist);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; cursor: pointer;" data-gl-faq="0" role="button" tabindex="0" aria-expanded="false">
+            <span style="font-size: 18px; font-weight: 600; color: var(--gliit-onyx); line-height: 1.5;">몇 학년 대상인가요?</span>
+            <span style="flex: 0 0 auto; font-size: 20px; color: var(--gliit-purple);" data-gl-faq-icon="0">+</span>
+          </div>
+          
+            <p style="margin: 0px; padding: 0px 4px 26px; font-size: 17px; line-height: 1.7; color: var(--fg-3);" data-gl-faq-panel="0">초등 3학년부터 6학년까지, 독서와 글쓰기 습관 형성이 꼭 필요한 학년부터 시작합니다.</p>
+          
+        </div>
+        <div style="border-bottom: 1px solid var(--gliit-mist);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; cursor: pointer;" data-gl-faq="1" role="button" tabindex="0" aria-expanded="false">
+            <span style="font-size: 18px; font-weight: 600; color: var(--gliit-onyx); line-height: 1.5;">기기 구매나 대여가 필요한가요?</span>
+            <span style="flex: 0 0 auto; font-size: 20px; color: var(--gliit-purple);" data-gl-faq-icon="1">+</span>
+          </div>
+          
+            <p style="margin: 0px; padding: 0px 4px 26px; font-size: 17px; line-height: 1.7; color: var(--fg-3);display:none" data-gl-faq-panel="1">글잇은 웹으로 접속해 로그인하면 바로 이용할 수 있습니다. 집에 사용중인 기기로도 충분합니다.</p>
+          
+        </div>
+        <div style="border-bottom: 1px solid var(--gliit-mist);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; cursor: pointer;" data-gl-faq="2" role="button" tabindex="0" aria-expanded="false">
+            <span style="font-size: 18px; font-weight: 600; color: var(--gliit-onyx); line-height: 1.5;">책은 포함인가요? 전자책인가요 실물책인가요?</span>
+            <span style="flex: 0 0 auto; font-size: 20px; color: var(--gliit-purple);" data-gl-faq-icon="2">+</span>
+          </div>
+          
+            <p style="margin: 0px; padding: 0px 4px 26px; font-size: 17px; line-height: 1.7; color: var(--fg-3);display:none" data-gl-faq-panel="2">책은 가격에 포함되어 있지 않습니다. 부가 서비스로 책 구매 후 배송받기, 전자책 구독하기 중 선택하실 수 있습니다.</p>
+          
+        </div>
+        <div style="border-bottom: 1px solid var(--gliit-mist);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; cursor: pointer;" data-gl-faq="3" role="button" tabindex="0" aria-expanded="false">
+            <span style="font-size: 18px; font-weight: 600; color: var(--gliit-onyx); line-height: 1.5;">책은 정해져 있나요?</span>
+            <span style="flex: 0 0 auto; font-size: 20px; color: var(--gliit-purple);" data-gl-faq-icon="3">+</span>
+          </div>
+          
+            <p style="margin: 0px; padding: 0px 4px 26px; font-size: 17px; line-height: 1.7; color: var(--fg-3);display:none" data-gl-faq-panel="3">아이의 독서 수준에 맞는 책 목록에서 아이가 스스로 선택합니다. 글잇의 프로그램은 우리 아이의 흥미와 관심사에 맞춰 진행됩니다.</p>
+          
+        </div>
+        <div style="border-bottom: 1px solid var(--gliit-mist);">
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 26px 4px; cursor: pointer;" data-gl-faq="4" role="button" tabindex="0" aria-expanded="false">
+            <span style="font-size: 18px; font-weight: 600; color: var(--gliit-onyx); line-height: 1.5;">구매 후에 환불이 가능한가요?</span>
+            <span style="flex: 0 0 auto; font-size: 20px; color: var(--gliit-purple);" data-gl-faq-icon="4">+</span>
+          </div>
+          
+            <p style="margin: 0px; padding: 0px 4px 26px; font-size: 17px; line-height: 1.7; color: var(--fg-3);display:none" data-gl-faq-panel="4">7일 내 불만족 시 전액 환불이 가능하며, 이용 중 환불 시 이용한 개월 수의 금액을 제하고 환불됩니다.</p>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="consult" style="padding: 112px 24px 60px;">
+    <div style="position: relative; max-width: 1120px; margin: 0px auto; border-radius: 24px; overflow: hidden; background: var(--gliit-purple); padding: 88px 40px; text-align: center;">
+      <div style="position: absolute; inset: 0px; background-image: url(&quot;assets/pattern-symbol.svg&quot;); background-size: 180px; opacity: 0.1; pointer-events: none;"></div>
+      <div style="position: relative; max-width: 720px; margin: 0px auto; display: flex; flex-direction: column; align-items: center; gap: 24px;">
+        <h2 style="font-family: var(--font-display); font-size: clamp(30px, 3.8vw, 46px); line-height: 1.28; color: rgb(255, 255, 255); margin: 0px; text-wrap: pretty;">정답을 고르는 공부에서,<br>자기 생각을 쓰는 공부로</h2>
+        <p style="margin: 0px; font-size: 18px; line-height: 1.7; color: rgba(255, 255, 255, 0.86); text-wrap: pretty;">사고력과 표현력은 하루아침에 생기지 않습니다.<br>시험이 바뀌기 전에, 읽은 책을 자기 실력으로 만드는 루틴을 지금 시작하세요.</p>
+        <a href="#consult" class="scp1" style="display: inline-flex; align-items: center; justify-content: center; margin-top: 8px; padding: 20px 40px; border-radius: 14px; background: rgb(255, 255, 255); color: rgb(139, 61, 255); font-size: 18px; font-weight: 700; box-shadow: var(--shadow-button);">우리 아이 학습 상담 신청하기</a>
+        
+      </div>
+    </div>
+  </section>
+
+  <footer style="padding: 64px 24px 84px;">
+    <div style="max-width: 1120px; margin: 0px auto; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; border-top: 1px solid var(--gliit-mist); padding-top: 32px;">
+      <img src="assets/gliit-logo-new.png" alt="글잇" style="height: 30px; width: auto; display: block;">
+      <span style="font-size: 13px; color: var(--fg-4);">글잇 · 사고를 잇는, 성장을 돕는 문해력 성장 파트너</span>
+    </div>
+    <div style="max-width: 1120px; margin: 16px auto 0px; display: flex; flex-direction: column; gap: 4px;">
+      <span style="font-size: 12px; line-height: 1.7; color: var(--fg-4);">주식회사 퓨처덕 · 대표자 나기쁨</span>
+      <span style="font-size: 12px; line-height: 1.7; color: var(--fg-4);">사업자등록번호 842-86-03079 | 통신판매업신고 2025-전주완산-0722</span>
+      <span style="font-size: 12px; line-height: 1.7; color: var(--fg-4);">주소 전북특별자치도 전주시 완산구 홍산북로 83 205호 | 대표전화 063-229-9275</span>
+    </div>
+  </footer>
+
+  
+  <div style="position: fixed; left: 0px; right: 0px; bottom: 0px; z-index: 50; background: rgba(255, 255, 255, 0.96); border-top: 1px solid var(--gliit-mist); box-shadow: rgba(14, 19, 24, 0.08) 0px -4px 20px;">
+    <div style="max-width: 1120px; margin: 0px auto; padding: 12px 16px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-size: 15px; font-weight: 700; color: var(--gliit-onyx);">월 98,000원부터</span>
+        <span style="font-size: 12px; color: var(--fg-4);">1분 신청 · 결제 전 상담</span>
+      </div>
+      <a href="#consult" class="scp0" style="flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0px 28px; border-radius: 12px; background: rgb(139, 61, 255); color: rgb(255, 255, 255); font-size: 16px; font-weight: 700;">상담 신청하기</a>
+    </div>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+</html>
