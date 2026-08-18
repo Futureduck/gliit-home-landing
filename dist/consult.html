@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<title>학습 상담 신청 — 글잇 홈 독서논술 PT</title>
+<meta name="description" content="아이의 독서·글쓰기 성향과 학습 목표를 확인하고, 글잇 홈을 어떻게 활용할 수 있는지 안내해드립니다. 1분이면 신청이 끝나고, 신청만으로 결제되지 않습니다.">
+<link rel="canonical" href="https://home.gliit.me/consult">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="글잇">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:url" content="https://home.gliit.me/consult">
+<meta property="og:title" content="학습 상담 신청 — 글잇 홈 독서논술 PT">
+<meta property="og:description" content="우리 아이에게 맞는 독서논술, 상담부터 받아보세요. 글잇 1기 100명 선착순 모집.">
+<meta property="og:image" content="https://home.gliit.me/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="학습 상담 신청 — 글잇 홈 독서논술 PT">
+<meta name="twitter:description" content="우리 아이에게 맞는 독서논술, 상담부터 받아보세요.">
+<meta name="twitter:image" content="https://home.gliit.me/assets/og-image.jpg">
+
+<meta name="theme-color" content="#0B1030">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icon-180.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/ds/gliit.css">
+
+<style>
+  :root {
+    --font-body: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    --font-display: "IBM Plex Sans KR", "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+    --cta: #8B3DFF;
+    --cta-ink: #6B22D8;
+    --cta-wash: #F6F1FF;
+    --danger: #D33B4D;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #fff; font-family: var(--font-body); color: var(--fg-2); }
+  a { color: var(--cta); text-decoration: none; }
+
+  /* ---------- 헤더 ---------- */
+  .hd { position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.94);
+        border-bottom: 1px solid var(--gliit-mist); }
+  .hd-in { max-width: 720px; margin: 0 auto; padding: 12px 20px;
+           display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .hd-in > a:first-child { display: inline-flex; align-items: center; min-height: 44px; }
+  .hd-in img { height: 30px; width: auto; display: block; }
+  .hd-back { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px;
+             font-size: 14px; font-weight: 500; color: var(--fg-4); }
+  .hd-back:hover { color: var(--gliit-onyx); }
+
+  /* ---------- 레이아웃 ---------- */
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  .intro { padding: 56px 0 40px; }
+  .intro h1 { font-family: var(--font-display); font-size: clamp(28px, 4.4vw, 40px);
+              line-height: 1.3; letter-spacing: -.02em; color: var(--gliit-onyx); margin: 0; text-wrap: pretty; }
+  .intro p { margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: var(--fg-3); text-wrap: pretty; }
+
+  /* ---------- 섹션 ---------- */
+  .step { border-top: 1px solid var(--gliit-mist); padding: 40px 0 8px; }
+  .step-no { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px;
+             background: var(--gliit-onyx); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .02em; }
+  .step h2 { font-family: var(--font-display); font-size: 22px; line-height: 1.4;
+             color: var(--gliit-onyx); margin: 14px 0 0; }
+
+  /* ---------- 문항 ---------- */
+  .q { padding: 28px 0; border-bottom: 1px solid var(--gliit-haze); border-left: 0; border-right: 0; border-top: 0;
+       margin: 0; min-width: 0; }
+  .q:last-of-type { border-bottom: 0; }
+  .q-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 0; }
+  .q-label { font-size: 17px; font-weight: 600; line-height: 1.5; color: var(--gliit-onyx); }
+  .chip { flex: none; font-size: 11px; font-weight: 600; padding: 3px 7px; border-radius: 5px; letter-spacing: .02em; }
+  .chip-req { background: var(--cta-wash); color: var(--cta-ink); }
+  .chip-opt { background: var(--gliit-haze); color: var(--fg-3); }
+  .q-hint { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: var(--fg-4); }
+
+  /* ---------- 선택지 ---------- */
+  .opts { display: grid; gap: 8px; margin-top: 16px; }
+  .opts-2 { grid-template-columns: repeat(2, 1fr); }
+  .opts-scale { grid-template-columns: 1fr; }
+  .opts-wide { grid-template-columns: 1fr; }
+  .opts-time { grid-template-columns: repeat(2, 1fr); }
+  @media (min-width: 600px) {
+    .opts-wide  { grid-template-columns: repeat(2, 1fr); }
+    .opts-time  { grid-template-columns: repeat(3, 1fr); }
+  }
+  /* 5칸이 한 줄에 들어가려면 칸당 125px 은 필요하다. 그 아래에서는 세로로 쌓는다. */
+  @media (min-width: 700px) {
+    .opts-scale { grid-template-columns: repeat(5, 1fr); }
+  }
+  .opt { position: relative; display: block; }
+  .opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+  .opt > span { display: flex; align-items: center; justify-content: center; text-align: center;
+              min-height: 52px; padding: 12px 14px; border: 1px solid var(--gliit-mist); border-radius: 12px;
+              background: #fff; font-size: 15px; line-height: 1.45; color: var(--fg-2);
+              cursor: pointer; transition: border-color .15s, background .15s, color .15s; }
+  .opt:hover > span { border-color: var(--gliit-stone); }
+  .opt input:checked + span { border-color: var(--cta); background: var(--cta-wash);
+                              color: var(--cta-ink); font-weight: 600; box-shadow: inset 0 0 0 1px var(--cta); }
+  .opt input:focus-visible + span { outline: 2px solid var(--cta); outline-offset: 2px; }
+
+  /* ---------- 입력 ---------- */
+  .fld { width: 100%; margin-top: 16px; padding: 15px 16px; border: 1px solid var(--gliit-mist);
+         border-radius: 12px; background: #fff; font-family: inherit; font-size: 16px; line-height: 1.5;
+         color: var(--gliit-onyx); transition: border-color .15s, box-shadow .15s; }
+  .fld::placeholder { color: var(--fg-4); }
+  .fld:focus { outline: 0; border-color: var(--cta); box-shadow: 0 0 0 3px rgba(139,61,255,.14); }
+  textarea.fld { min-height: 132px; resize: vertical; }
+  .count { margin-top: 8px; text-align: right; font-size: 13px; color: var(--fg-4);
+           font-family: var(--font-mono-num); }
+
+  /* ---------- 오류 ---------- */
+  .err { display: none; margin-top: 10px; font-size: 14px; line-height: 1.5; color: var(--danger); }
+  .q.invalid .err { display: block; }
+  .q.invalid .opt > span { border-color: rgba(211,59,77,.45); }
+  .q.invalid .fld { border-color: var(--danger); }
+
+  /* ---------- 동의 ---------- */
+  .consent { margin-top: 28px; border: 1px solid var(--gliit-mist); border-radius: 16px;
+             background: var(--gliit-paper); overflow: hidden; }
+  .consent-row { display: flex; align-items: flex-start; gap: 12px; padding: 20px; cursor: pointer; }
+  .consent-row input { flex: none; width: 22px; height: 22px; margin: 0; accent-color: var(--cta); cursor: pointer; }
+  .consent-row span { font-size: 15px; line-height: 1.55; color: var(--gliit-onyx); }
+  .acc-btn { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px;
+             padding: 14px 20px; border: 0; border-top: 1px solid var(--gliit-mist); background: transparent;
+             font-family: inherit; font-size: 14px; color: var(--fg-3); cursor: pointer; text-align: left; }
+  .acc-btn:hover { color: var(--gliit-onyx); }
+  .acc-btn .caret { transition: transform .18s; font-size: 11px; }
+  .acc-btn[aria-expanded="true"] .caret { transform: rotate(180deg); }
+  .acc-body { display: none; padding: 0 20px 20px; }
+  .acc-body.open { display: block; }
+  .acc-tbl { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 1.65; }
+  .acc-tbl th, .acc-tbl td { border: 1px solid var(--gliit-mist); padding: 10px 12px; text-align: left; vertical-align: top; }
+  .acc-tbl th { width: 92px; background: #fff; color: var(--gliit-onyx); font-weight: 600; white-space: nowrap; }
+  .acc-tbl td { background: #fff; color: var(--fg-3); }
+  .consent.invalid { border-color: var(--danger); }
+  .consent .err { padding: 0 20px 16px; margin: 0; }
+  .consent.invalid .err { display: block; }
+
+  /* ---------- 제출 ---------- */
+  .submit-zone { padding: 32px 0 72px; }
+  .btn-submit { width: 100%; min-height: 60px; padding: 18px 24px; border: 0; border-radius: 14px;
+                background: var(--cta); color: #fff; font-family: inherit; font-size: 18px; font-weight: 700;
+                cursor: pointer; box-shadow: var(--shadow-button); transition: opacity .15s; }
+  .btn-submit:hover { opacity: .88; }
+  .btn-submit:disabled { opacity: .55; cursor: default; }
+  .submit-note { margin: 14px 0 0; text-align: center; font-size: 14px; line-height: 1.7; color: var(--fg-4); }
+  .form-err { display: none; margin: 16px 0 0; padding: 14px 16px; border-radius: 10px;
+              background: #FDF0F1; color: var(--danger); font-size: 14px; line-height: 1.6; }
+  .form-err.show { display: block; }
+
+  /* ---------- 푸터 ---------- */
+  footer { padding: 40px 20px 56px; border-top: 1px solid var(--gliit-mist); }
+  footer .fin { max-width: 720px; margin: 0 auto; display: flex; flex-direction: column; gap: 4px; }
+  footer span { font-size: 12px; line-height: 1.7; color: var(--fg-4); }
+
+  /* ---------- 모달 ---------- */
+  .modal { position: fixed; inset: 0; z-index: 100; display: none;
+           align-items: center; justify-content: center; padding: 20px;
+           background: rgba(14,19,24,.55); }
+  .modal.open { display: flex; }
+  .modal-card { width: 100%; max-width: 460px; max-height: calc(100vh - 40px); overflow-y: auto;
+                background: #fff; border-radius: 20px; padding: 32px 26px 26px; box-shadow: var(--shadow-pop); }
+  .modal-card h3 { font-family: var(--font-display); font-size: 22px; line-height: 1.4;
+                   color: var(--gliit-onyx); margin: 0; }
+  .modal-card p { margin: 14px 0 0; font-size: 15px; line-height: 1.7; color: var(--fg-3); text-wrap: pretty; }
+  .summary { margin: 22px 0 0; padding: 16px 18px; border-radius: 12px; background: var(--gliit-paper);
+             display: flex; flex-direction: column; gap: 10px; }
+  .summary > div { display: flex; gap: 12px; font-size: 14px; line-height: 1.5; }
+  .summary dt { flex: none; width: 66px; color: var(--fg-4); }
+  .summary dd { margin: 0; color: var(--gliit-onyx); font-weight: 600; }
+  .modal-actions { margin-top: 24px; display: flex; gap: 10px; }
+  .btn { flex: 1; min-height: 52px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--gliit-mist);
+         background: #fff; font-family: inherit; font-size: 16px; font-weight: 600; color: var(--fg-2);
+         cursor: pointer; transition: opacity .15s, background .15s; }
+  .btn:hover { background: var(--gliit-paper); }
+  .btn-primary { border-color: var(--cta); background: var(--cta); color: #fff; }
+  .btn-primary:hover { background: var(--cta); opacity: .88; }
+  .btn:disabled { opacity: .55; cursor: default; }
+
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+             overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 560px) {
+    .intro { padding: 40px 0 32px; }
+    .step { padding: 32px 0 4px; }
+    .q { padding: 24px 0; }
+    .modal-card { padding: 26px 20px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition-duration: .01ms !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div class="hd-in">
+    <a href="/" aria-label="글잇 홈"><img src="assets/gliit-logo-new.png" alt="글잇"></a>
+    <a class="hd-back" href="/">글잇 홈 PT 소개</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="intro">
+    <h1>우리 아이에게 맞는 독서논술,<br>상담부터 받아보세요</h1>
+    <p>아이의 독서·글쓰기 성향과 학습 목표를 확인하고, 글잇 홈을 어떻게 활용할 수 있는지 안내해드릴게요.</p>
+  </div>
+
+  <form id="consultForm" novalidate>
+    <div class="sr-only" aria-hidden="true">
+      <label>이 항목은 비워두세요<input type="text" name="website" id="hp" tabindex="-1" autocomplete="off"></label>
+    </div>
+
+    <section class="step">
+      <span class="step-no">1단계</span>
+      <h2>아이에 대해 알려주세요</h2>
+
+      <fieldset class="q" data-q="grade">
+        <legend class="q-head"><span class="q-label">1. 아이는 몇 학년인가요?</span><span class="chip chip-req">필수</span></legend>
+        <div class="opts opts-2">
+          <label class="opt"><input type="radio" name="grade" value="초등 3학년"><span>초등 3학년</span></label>
+          <label class="opt"><input type="radio" name="grade" value="초등 4학년"><span>초등 4학년</span></label>
+          <label class="opt"><input type="radio" name="grade" value="초등 5학년"><span>초등 5학년</span></label>
+          <label class="opt"><input type="radio" name="grade" value="초등 6학년"><span>초등 6학년</span></label>
+        </div>
+        <p class="err">학년을 선택해주세요.</p>
+      </fieldset>
+
+      <fieldset class="q" data-q="reading">
+        <legend class="q-head"><span class="q-label">2. 아이는 평소 책 읽기를 얼마나 좋아하나요?</span><span class="chip chip-req">필수</span></legend>
+        <div class="opts opts-scale">
+          <label class="opt"><input type="radio" name="reading" value="매우 좋아해요"><span>매우 좋아해요</span></label>
+          <label class="opt"><input type="radio" name="reading" value="좋아해요"><span>좋아해요</span></label>
+          <label class="opt"><input type="radio" name="reading" value="보통이에요"><span>보통이에요</span></label>
+          <label class="opt"><input type="radio" name="reading" value="싫어해요"><span>싫어해요</span></label>
+          <label class="opt"><input type="radio" name="reading" value="매우 싫어해요"><span>매우 싫어해요</span></label>
+        </div>
+        <p class="err">책 읽기 선호도를 선택해주세요.</p>
+      </fieldset>
+
+      <fieldset class="q" data-q="writing">
+        <legend class="q-head"><span class="q-label">3. 아이는 평소 글쓰기를 얼마나 좋아하나요?</span><span class="chip chip-req">필수</span></legend>
+        <div class="opts opts-scale">
+          <label class="opt"><input type="radio" name="writing" value="매우 좋아해요"><span>매우 좋아해요</span></label>
+          <label class="opt"><input type="radio" name="writing" value="좋아해요"><span>좋아해요</span></label>
+          <label class="opt"><input type="radio" name="writing" value="보통이에요"><span>보통이에요</span></label>
+          <label class="opt"><input type="radio" name="writing" value="싫어해요"><span>싫어해요</span></label>
+          <label class="opt"><input type="radio" name="writing" value="매우 싫어해요"><span>매우 싫어해요</span></label>
+        </div>
+        <p class="err">글쓰기 선호도를 선택해주세요.</p>
+      </fieldset>
+
+      <fieldset class="q" data-q="reason">
+        <legend class="q-head"><span class="q-label">4. 글잇에 관심을 갖게 된 가장 큰 이유는 무엇인가요?</span><span class="chip chip-req">필수</span></legend>
+        <p class="q-hint">가장 주된 이유 하나만 선택해주세요.</p>
+        <div class="opts opts-wide">
+          <label class="opt"><input type="radio" name="reason" value="입시 변화와 서·논술형 평가 대비"><span>입시 변화와 서·논술형 평가 대비</span></label>
+          <label class="opt"><input type="radio" name="reason" value="아이의 사고력 키우기"><span>아이의 사고력 키우기</span></label>
+          <label class="opt"><input type="radio" name="reason" value="논리적 글쓰기 실력 향상"><span>논리적 글쓰기 실력 향상</span></label>
+          <label class="opt"><input type="radio" name="reason" value="꾸준한 독서 습관 만들기"><span>꾸준한 독서 습관 만들기</span></label>
+        </div>
+        <p class="err">관심을 갖게 된 이유를 선택해주세요.</p>
+      </fieldset>
+    </section>
+
+    <section class="step">
+      <span class="step-no">2단계</span>
+      <h2>연락받으실 정보를 알려주세요</h2>
+
+      <div class="q" data-q="parentName">
+        <div class="q-head"><label class="q-label" for="parentName">5. 학부모님 성함</label><span class="chip chip-req">필수</span></div>
+        <input class="fld" type="text" id="parentName" name="parentName" placeholder="예: 홍길동"
+               autocomplete="name" maxlength="20" enterkeyhint="next">
+        <p class="err">성함을 입력해주세요.</p>
+      </div>
+
+      <div class="q" data-q="phone">
+        <div class="q-head"><label class="q-label" for="phone">6. 연락받으실 휴대전화 번호</label><span class="chip chip-req">필수</span></div>
+        <input class="fld" type="tel" id="phone" name="phone" placeholder="010-1234-5678"
+               autocomplete="tel" inputmode="numeric" maxlength="13" enterkeyhint="next">
+        <p class="err" id="phoneErr">휴대전화 번호를 010-1234-5678 형식으로 입력해주세요.</p>
+      </div>
+
+      <fieldset class="q" data-q="times">
+        <legend class="q-head"><span class="q-label">7. 언제 연락드리면 가장 편하신가요?</span><span class="chip chip-req">필수</span></legend>
+        <p class="q-hint">편하신 시간대를 모두 선택해주세요.</p>
+        <div class="opts opts-time">
+          <label class="opt"><input type="checkbox" name="times" value="오전 10시–12시"><span>오전 10시–12시</span></label>
+          <label class="opt"><input type="checkbox" name="times" value="오후 12시–3시"><span>오후 12시–3시</span></label>
+          <label class="opt"><input type="checkbox" name="times" value="오후 3시–6시"><span>오후 3시–6시</span></label>
+          <label class="opt"><input type="checkbox" name="times" value="저녁 6시–8시"><span>저녁 6시–8시</span></label>
+          <label class="opt"><input type="checkbox" name="times" value="언제든 괜찮아요"><span>언제든 괜찮아요</span></label>
+        </div>
+        <p class="err">연락 가능한 시간대를 하나 이상 선택해주세요.</p>
+      </fieldset>
+
+      <div class="q" data-q="note">
+        <div class="q-head"><label class="q-label" for="note">8. 그 밖에 궁금한 점이 있으신가요?</label><span class="chip chip-opt">선택</span></div>
+        <textarea class="fld" id="note" name="note" maxlength="300"
+                  placeholder="아이의 현재 독서·글쓰기 습관이나 상담에서 꼭 다루고 싶은 내용을 자유롭게 남겨주세요."></textarea>
+        <p class="count"><span id="noteCount">0</span> / 300자</p>
+      </div>
+    </section>
+
+    <section class="step">
+      <span class="step-no">3단계</span>
+      <h2>개인정보 수집·이용 동의</h2>
+
+      <div class="consent" id="consentBox">
+        <label class="consent-row" for="consent">
+          <input type="checkbox" id="consent" name="consent">
+          <span>상담 제공을 위한 개인정보 수집·이용에 동의합니다. <strong>(필수)</strong></span>
+        </label>
+        <button type="button" class="acc-btn" id="accBtn" aria-expanded="false" aria-controls="accBody">
+          <span>수집 항목·목적·보유 기간 자세히 보기</span><span class="caret" aria-hidden="true">▼</span>
+        </button>
+        <div class="acc-body" id="accBody">
+          <table class="acc-tbl">
+            <tbody>
+              <tr><th scope="row">수집 목적</th><td>글잇 홈 학습 상담 신청 확인 및 상담 진행</td></tr>
+              <tr><th scope="row">수집 항목</th><td>학부모 성함, 연락처, 선호 연락 시간대, 자녀 학년, 독서·글쓰기 선호 수준, 관심 이유, 기타 문의사항</td></tr>
+              <tr><th scope="row">보유 기간</th><td>상담 종료 후 1개월 또는 관계 법령에 따른 기간</td></tr>
+              <tr><th scope="row">동의 거부</th><td>동의를 거부할 수 있으나 학습 상담 신청이 제한됩니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="err">개인정보 수집·이용에 동의해주세요.</p>
+      </div>
+    </section>
+
+    <div class="submit-zone">
+      <button type="submit" class="btn-submit" id="submitBtn">무료 학습 상담 신청하기</button>
+      <p class="submit-note">신청만으로 결제되지 않습니다.<br>남겨주신 시간대를 참고해 순차적으로 연락드립니다.</p>
+      <p class="form-err" id="formErr" role="alert"></p>
+    </div>
+  </form>
+</main>
+
+<footer>
+  <div class="fin">
+    <span>주식회사 퓨처덕 · 대표자 나기쁨</span>
+    <span>사업자등록번호 842-86-03079 | 통신판매업신고 2025-전주완산-0722</span>
+    <span>주소 전북특별자치도 전주시 완산구 홍산북로 83 205호 | 대표전화 063-229-9275</span>
+  </div>
+</footer>
+
+<div class="modal" id="okModal" role="dialog" aria-modal="true" aria-labelledby="okTitle">
+  <div class="modal-card">
+    <h3 id="okTitle">상담 신청이 완료되었습니다!</h3>
+    <p>남겨주신 정보를 바탕으로 우리 아이에게 맞는 글잇 홈 활용 방법을 함께 살펴볼게요. 선택하신 시간대를 참고해 담당 선생님이 연락드리겠습니다.</p>
+    <dl class="summary">
+      <div><dt>신청자</dt><dd id="sumName">—</dd></div>
+      <div><dt>연락처</dt><dd id="sumPhone">—</dd></div>
+      <div><dt>선호 시간</dt><dd id="sumTimes">—</dd></div>
+    </dl>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" id="okClose">확인</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="fullModal" role="dialog" aria-modal="true" aria-labelledby="fullTitle">
+  <div class="modal-card">
+    <h3 id="fullTitle">죄송합니다!</h3>
+    <p id="fullBody">선착순 100명 모집이 마감되었습니다.<br>글잇 2기 모집 시작 시 연락을 받으시겠어요?<br><span style="color:var(--fg-4);font-size:14px">(거부 시 수집 정보는 즉시 폐기합니다.)</span></p>
+    <div class="modal-actions" id="fullActions">
+      <button type="button" class="btn" id="waitNo">거부</button>
+      <button type="button" class="btn btn-primary" id="waitYes">연락 받기</button>
+    </div>
+  </div>
+</div>
+
+<script src="consult.js" defer></script>
+</body>
+</html>
