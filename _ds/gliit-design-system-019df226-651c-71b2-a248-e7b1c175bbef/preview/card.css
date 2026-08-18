@@ -1,0 +1,50 @@
+/* Preview card shared styles — every card is a 700px wide HTML page
+   that renders one design-system concept against the brand canvas. */
+
+@import url("../colors_and_type.css");
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg-canvas);
+  color: var(--fg-1);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body.card {
+  width: 700px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* circled number chip — the system's signature caption marker */
+.gl-chip {
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  background: var(--gliit-onyx);
+  color: var(--fg-inverse);
+  font-family: var(--font-mono-num);
+  font-weight: 500;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+.gl-chip.lg { width: 34px; height: 34px; border-radius: 11px; font-size: 14px; }
+
+.label {
+  font-family: var(--font-mono-num);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg-4);
+}
+
+.row { display: flex; gap: 8px; }
+.col { display: flex; flex-direction: column; gap: 8px; }

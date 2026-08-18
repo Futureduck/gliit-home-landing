@@ -1,0 +1,185 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": []
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:HS Santokki|IBM Plex Sans KR|Space Grotesk))/i]",
+        "message": "Font not provided by the design system. Available: HS Santokki, IBM Plex Sans KR, Space Grotesk."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {},
+    "tokens": [
+      "--bg-canvas",
+      "--bg-dark",
+      "--bg-surface",
+      "--bg-surface-2",
+      "--border-hairline",
+      "--border-soft",
+      "--fg-1",
+      "--fg-2",
+      "--fg-3",
+      "--fg-4",
+      "--fg-inverse",
+      "--font-body",
+      "--font-display",
+      "--font-mono-num",
+      "--fs-body",
+      "--fs-body-lg",
+      "--fs-caption",
+      "--fs-caption-sm",
+      "--fs-display",
+      "--fs-display-xl",
+      "--fs-micro",
+      "--fs-subtitle",
+      "--fs-title",
+      "--gliit-blue",
+      "--gliit-graphite",
+      "--gliit-graphite-muted",
+      "--gliit-haze",
+      "--gliit-ink",
+      "--gliit-mist",
+      "--gliit-onyx",
+      "--gliit-onyx-soft",
+      "--gliit-orange",
+      "--gliit-paper",
+      "--gliit-pink",
+      "--gliit-pink-hot",
+      "--gliit-purple",
+      "--gliit-purple-deep",
+      "--gliit-purple-digital",
+      "--gliit-purple-muted",
+      "--gliit-purple-soft",
+      "--gliit-snow",
+      "--gliit-stone",
+      "--gliit-white",
+      "--gliit-yellow",
+      "--lh-normal",
+      "--lh-relaxed",
+      "--lh-snug",
+      "--lh-tight",
+      "--r-1",
+      "--r-2",
+      "--r-3",
+      "--r-4",
+      "--r-5",
+      "--r-symbol",
+      "--shadow-button",
+      "--shadow-card",
+      "--shadow-pop",
+      "--sp-1",
+      "--sp-2",
+      "--sp-3",
+      "--sp-4",
+      "--sp-5",
+      "--sp-6",
+      "--sp-7"
+    ],
+    "tokenKinds": {
+      "--gliit-purple": "color",
+      "--gliit-purple-digital": "color",
+      "--gliit-purple-soft": "color",
+      "--gliit-purple-muted": "color",
+      "--gliit-purple-deep": "color",
+      "--gliit-orange": "color",
+      "--gliit-yellow": "color",
+      "--gliit-blue": "color",
+      "--gliit-pink": "color",
+      "--gliit-pink-hot": "color",
+      "--gliit-onyx": "color",
+      "--gliit-onyx-soft": "color",
+      "--gliit-ink": "color",
+      "--gliit-graphite": "color",
+      "--gliit-graphite-muted": "color",
+      "--gliit-stone": "color",
+      "--gliit-mist": "color",
+      "--gliit-haze": "color",
+      "--gliit-paper": "color",
+      "--gliit-snow": "color",
+      "--gliit-white": "color",
+      "--fg-1": "color",
+      "--fg-2": "color",
+      "--fg-3": "color",
+      "--fg-4": "color",
+      "--fg-inverse": "color",
+      "--bg-canvas": "color",
+      "--bg-surface": "color",
+      "--bg-surface-2": "color",
+      "--bg-dark": "color",
+      "--border-hairline": "color",
+      "--border-soft": "other",
+      "--shadow-card": "shadow",
+      "--shadow-pop": "shadow",
+      "--shadow-button": "shadow",
+      "--font-display": "font",
+      "--font-body": "font",
+      "--font-mono-num": "font",
+      "--fs-display-xl": "spacing",
+      "--fs-display": "spacing",
+      "--fs-title": "spacing",
+      "--fs-subtitle": "spacing",
+      "--fs-body": "spacing",
+      "--fs-body-lg": "spacing",
+      "--fs-caption": "spacing",
+      "--fs-caption-sm": "spacing",
+      "--fs-micro": "spacing",
+      "--lh-tight": "other",
+      "--lh-snug": "other",
+      "--lh-normal": "other",
+      "--lh-relaxed": "other",
+      "--r-1": "spacing",
+      "--r-2": "spacing",
+      "--r-3": "spacing",
+      "--r-4": "spacing",
+      "--r-5": "spacing",
+      "--r-symbol": "spacing",
+      "--sp-1": "spacing",
+      "--sp-2": "spacing",
+      "--sp-3": "spacing",
+      "--sp-4": "spacing",
+      "--sp-5": "spacing",
+      "--sp-6": "spacing",
+      "--sp-7": "spacing"
+    },
+    "fontFamilies": [
+      "HS Santokki",
+      "IBM Plex Sans KR",
+      "Space Grotesk"
+    ]
+  }
+}
