@@ -4,7 +4,7 @@
   'use strict';
 
   var N = 5;
-  var STEP = 340;      // 카드 간 가로 간격(px)
+  var STEP_RATIO = 340 / 380;  // 원본 데스크톱 비율 (카드폭 380 : 간격 340)
   var INTERVAL = 3400; // 자동 넘김 주기
   var RESUME = 9000;   // 수동 조작 후 자동 넘김 재개까지
 
@@ -18,7 +18,14 @@
   var timer = null;
   var resumeTimer = null;
 
+  // 간격을 카드 실제 폭에서 산출. 데스크톱(380px)에서는 정확히 340px 로 원본과 동일.
+  function step() {
+    var c = document.querySelector('[data-gl-card]');
+    return c && c.offsetWidth ? c.offsetWidth * STEP_RATIO : 340;
+  }
+
   function applyCarousel(a) {
+    var STEP = step();
     for (var i = 0; i < N; i++) {
       var d = (i - a + N) % N;
       if (d > N / 2) d -= N;           // -2..2 부호 있는 거리
@@ -43,6 +50,20 @@
         dot.setAttribute('aria-current', d === 0 ? 'true' : 'false');
       }
     }
+  }
+
+  // 모바일에서 트랙 높이를 카드 실측값에 맞춘다 (769px 이상은 원본 520px 유지)
+  var trackH0 = null;   // 원본 인라인 높이(520px) 보존
+  function fitTrack() {
+    var track = document.querySelector('.gl-carousel');
+    if (!track) return;
+    if (trackH0 === null) trackH0 = track.style.height || '520px';
+    if (window.innerWidth > 768) { track.style.height = trackH0; return; }
+    var h = 0;
+    document.querySelectorAll('[data-gl-card]').forEach(function (c) {
+      if (c.offsetHeight > h) h = c.offsetHeight;
+    });
+    if (h) track.style.height = (h + 36) + 'px';
   }
 
   function pick(i) {
@@ -76,8 +97,16 @@
       dot.addEventListener('click', function () { pick(i); });
     });
 
+    fitTrack();
     applyCarousel(active);
     startCarousel();
+
+    // 뷰포트가 바뀌면 간격을 다시 계산
+    var rt;
+    window.addEventListener('resize', function () {
+      clearTimeout(rt);
+      rt = setTimeout(function () { fitTrack(); applyCarousel(active); }, 120);
+    });
   }
 
   /* ---------- FAQ 아코디언 ---------- */
