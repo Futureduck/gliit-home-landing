@@ -83,7 +83,7 @@
   .chip { flex: none; font-size: 11px; font-weight: 600; padding: 3px 7px; border-radius: 5px; letter-spacing: .02em; }
   .chip-req { background: var(--cta-wash); color: var(--cta-ink); }
   .chip-opt { background: var(--gliit-haze); color: var(--fg-3); }
-  .q-hint { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: var(--fg-4); }
+  .q-hint { margin: 8px 0 0; font-size: 14px; line-height: 1.6; color: var(--fg-4); max-width: 42em; }
 
   /* ---------- 선택지 ---------- */
   .opts { display: grid; gap: 8px; margin-top: 16px; }
@@ -109,6 +109,23 @@
   .opt input:checked + span { border-color: var(--cta); background: var(--cta-wash);
                               color: var(--cta-ink); font-weight: 600; box-shadow: inset 0 0 0 1px var(--cta); }
   .opt input:focus-visible + span { outline: 2px solid var(--cta); outline-offset: 2px; }
+
+  /* ---------- 관심 상품 카드 ---------- */
+  .opts-plan { grid-template-columns: 1fr; gap: 10px; }
+  @media (min-width: 560px) { .opts-plan { grid-template-columns: repeat(2, 1fr); } }
+  .opt-plan > span { flex-direction: column; align-items: stretch; justify-content: flex-start;
+                     text-align: left; gap: 6px; min-height: 0; padding: 18px 18px 16px; }
+  .plan-top { display: flex; align-items: center; gap: 8px; }
+  .plan-name { font-size: 17px; font-weight: 700; color: var(--gliit-onyx); }
+  .plan-badge { font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 999px;
+                background: var(--cta); color: #fff; letter-spacing: .01em; }
+  .plan-price { font-family: var(--font-mono-num); font-size: 24px; font-weight: 700;
+                letter-spacing: -.02em; color: var(--gliit-onyx); }
+  .plan-price em { font-style: normal; font-size: 14px; font-weight: 500; color: var(--fg-4);
+                   margin-right: 4px; font-family: var(--font-body); }
+  .plan-sub { font-size: 13px; line-height: 1.5; color: var(--fg-4); }
+  .opt-plan input:checked + span .plan-name,
+  .opt-plan input:checked + span .plan-price { color: var(--cta-ink); }
 
   /* ---------- 입력 ---------- */
   .fld { width: 100%; margin-top: 16px; padding: 15px 16px; border: 1px solid var(--gliit-mist);
@@ -273,6 +290,30 @@
         </div>
         <p class="err">관심을 갖게 된 이유를 선택해주세요.</p>
       </fieldset>
+
+      <fieldset class="q" data-q="plan">
+        <legend class="q-head"><span class="q-label">5. 어떤 플랜에 관심이 있으신가요?</span><span class="chip chip-req">필수</span></legend>
+        <p class="q-hint">지금 선택하셔도 결제되지 않습니다. 상담에서 함께 조정할 수 있어요.</p>
+        <div class="opts opts-plan">
+          <label class="opt opt-plan">
+            <input type="radio" name="plan" value="3개월">
+            <span>
+              <span class="plan-top"><span class="plan-name">3개월</span></span>
+              <span class="plan-price"><em>월</em>119,000원</span>
+              <span class="plan-sub">총 357,000원 · 먼저 경험해보고 싶은 가정</span>
+            </span>
+          </label>
+          <label class="opt opt-plan">
+            <input type="radio" name="plan" value="6개월">
+            <span>
+              <span class="plan-top"><span class="plan-name">6개월</span><span class="plan-badge">추천</span></span>
+              <span class="plan-price"><em>월</em>98,000원</span>
+              <span class="plan-sub">총 588,000원 · 습관 형성이 목표인 가정</span>
+            </span>
+          </label>
+        </div>
+        <p class="err">관심 있는 플랜을 선택해주세요.</p>
+      </fieldset>
     </section>
 
     <section class="step">
@@ -280,21 +321,21 @@
       <h2>연락받으실 정보를 알려주세요</h2>
 
       <div class="q" data-q="parentName">
-        <div class="q-head"><label class="q-label" for="parentName">5. 학부모님 성함</label><span class="chip chip-req">필수</span></div>
+        <div class="q-head"><label class="q-label" for="parentName">6. 학부모님 성함</label><span class="chip chip-req">필수</span></div>
         <input class="fld" type="text" id="parentName" name="parentName" placeholder="예: 홍길동"
                autocomplete="name" maxlength="20" enterkeyhint="next">
         <p class="err">성함을 입력해주세요.</p>
       </div>
 
       <div class="q" data-q="phone">
-        <div class="q-head"><label class="q-label" for="phone">6. 연락받으실 휴대전화 번호</label><span class="chip chip-req">필수</span></div>
+        <div class="q-head"><label class="q-label" for="phone">7. 연락받으실 휴대전화 번호</label><span class="chip chip-req">필수</span></div>
         <input class="fld" type="tel" id="phone" name="phone" placeholder="010-1234-5678"
                autocomplete="tel" inputmode="numeric" maxlength="13" enterkeyhint="next">
         <p class="err" id="phoneErr">휴대전화 번호를 010-1234-5678 형식으로 입력해주세요.</p>
       </div>
 
       <fieldset class="q" data-q="times">
-        <legend class="q-head"><span class="q-label">7. 언제 연락드리면 가장 편하신가요?</span><span class="chip chip-req">필수</span></legend>
+        <legend class="q-head"><span class="q-label">8. 언제 연락드리면 가장 편하신가요?</span><span class="chip chip-req">필수</span></legend>
         <p class="q-hint">편하신 시간대를 모두 선택해주세요.</p>
         <div class="opts opts-time">
           <label class="opt"><input type="checkbox" name="times" value="오전 10시–12시"><span>오전 10시–12시</span></label>
@@ -307,7 +348,7 @@
       </fieldset>
 
       <div class="q" data-q="note">
-        <div class="q-head"><label class="q-label" for="note">8. 그 밖에 궁금한 점이 있으신가요?</label><span class="chip chip-opt">선택</span></div>
+        <div class="q-head"><label class="q-label" for="note">9. 그 밖에 궁금한 점이 있으신가요?</label><span class="chip chip-opt">선택</span></div>
         <textarea class="fld" id="note" name="note" maxlength="300"
                   placeholder="아이의 현재 독서·글쓰기 습관이나 상담에서 꼭 다루고 싶은 내용을 자유롭게 남겨주세요."></textarea>
         <p class="count"><span id="noteCount">0</span> / 300자</p>
@@ -330,7 +371,7 @@
           <table class="acc-tbl">
             <tbody>
               <tr><th scope="row">수집 목적</th><td>글잇 홈 학습 상담 신청 확인 및 상담 진행</td></tr>
-              <tr><th scope="row">수집 항목</th><td>학부모 성함, 연락처, 선호 연락 시간대, 자녀 학년, 독서·글쓰기 선호 수준, 관심 이유, 기타 문의사항</td></tr>
+              <tr><th scope="row">수집 항목</th><td>학부모 성함, 연락처, 선호 연락 시간대, 자녀 학년, 독서·글쓰기 선호 수준, 관심 이유, 관심 플랜, 기타 문의사항</td></tr>
               <tr><th scope="row">보유 기간</th><td>상담 종료 후 1개월 또는 관계 법령에 따른 기간</td></tr>
               <tr><th scope="row">동의 거부</th><td>동의를 거부할 수 있으나 학습 상담 신청이 제한됩니다.</td></tr>
             </tbody>

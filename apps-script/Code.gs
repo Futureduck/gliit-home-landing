@@ -22,7 +22,7 @@ var CAP = 50;
 
 var HEADERS = [
   '접수시각', '학부모 성함', '연락처', '선호 연락시간', '자녀 학년',
-  '책읽기 선호', '글쓰기 선호', '관심 이유', '기타 문의', '개인정보 동의', '유입 경로'
+  '책읽기 선호', '글쓰기 선호', '관심 이유', '관심 플랜', '기타 문의', '개인정보 동의', '유입 경로'
 ];
 
 function doPost(e) {
@@ -57,6 +57,7 @@ function doPost(e) {
       d.reading,
       d.writing,
       d.reason,
+      d.plan,
       d.note || '',
       d.consent ? 'Y' : 'N',
       d.ref || ''
@@ -102,7 +103,7 @@ function validate(d) {
   if (!d.parentName || !String(d.parentName).trim()) return '성함이 비어 있습니다.';
   if (!/^(010-\d{4}|01[16789]-\d{3,4})-\d{4}$/.test(String(d.phone || ''))) return '휴대전화 번호 형식이 올바르지 않습니다.';
   if (!d.times || !d.times.length) return '연락 가능한 시간대를 선택해주세요.';
-  if (!d.grade || !d.reading || !d.writing || !d.reason) return '필수 문항이 비어 있습니다.';
+  if (!d.grade || !d.reading || !d.writing || !d.reason || !d.plan) return '필수 문항이 비어 있습니다.';
   if (d.note && String(d.note).length > 300) return '문의 내용이 300자를 넘습니다.';
   return null;
 }

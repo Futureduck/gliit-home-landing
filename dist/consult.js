@@ -89,7 +89,7 @@
   function validate() {
     var bad = [];
 
-    ['grade', 'reading', 'writing', 'reason'].forEach(function (name) {
+    ['grade', 'reading', 'writing', 'reason', 'plan'].forEach(function (name) {
       var box = form.querySelector('[data-q="' + name + '"]');
       if (!checkedValue(name)) { markError(box); bad.push(box); } else clearError(box);
     });
@@ -168,6 +168,7 @@
       reading: checkedValue('reading'),
       writing: checkedValue('writing'),
       reason: checkedValue('reason'),
+      plan: checkedValue('plan'),
       parentName: $('parentName').value.trim(),
       phone: phone.value.trim(),
       times: checkedValues('times'),

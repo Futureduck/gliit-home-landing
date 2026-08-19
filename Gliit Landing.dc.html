@@ -47,6 +47,13 @@
   /* 캐러셀 카드: 컨테이너보다 커서 잘리던 문제. 데스크톱에선 그대로 380px */
   [data-gl-card] { width: min(380px, calc(100% - 40px)) !important; }
 
+  /* 한글 본문은 한 줄 45자를 넘기면 읽기 부담이 커진다. 이 문단만 1040px 폭을
+     그대로 써서 58자까지 늘어나 있었다. */
+  .gl-note { max-width: 42em; }
+  /* FAQ 답변(840px 폭)과 교육비 섹션 리드 문단도 같은 이유로 줄길이를 제한 */
+  [data-gl-faq-panel] { max-width: 42em; }
+  .gl-cost-lead p { max-width: 42em; }
+
   /* 도트 탭 타겟 확대 (보이는 점은 9px 그대로) */
   [data-gl-dot] { position: relative; }
   [data-gl-dot]::after { content: ""; position: absolute; inset: -16px; }
@@ -54,7 +61,7 @@
   @media (max-width: 768px) {
     /* --- 섹션 리듬: 112~180px 여백을 64px 로 통일 --- */
     .gl-sec {
-      padding-top: 64px !important;
+      padding-top: clamp(64px, 10.7vw + 29.7px, 112px) !important;
       padding-bottom: 0 !important;
       padding-left: 20px !important;
       padding-right: 20px !important;
@@ -63,14 +70,18 @@
     .gl-sec-block { padding-bottom: 64px !important; }
 
     /* --- 히어로 --- */
+    /* 320px 의 값에서 출발해 768px 에서 데스크톱 값과 정확히 만난다.
+       고정값으로 두면 768px 경계에서 h1 이 30 → 41px 로 튄다. */
     .gl-hero {
-      padding-top: 64px !important;
-      padding-bottom: 56px !important;
+      padding-top: clamp(64px, 12.5vw + 24px, 120px) !important;
+      padding-bottom: clamp(56px, 12.5vw + 16px, 112px) !important;
       min-height: 0 !important;
     }
-    .gl-hero h1 { font-size: 30px !important; line-height: 1.28 !important; margin-top: 18px !important; }
-    .gl-hero p  { font-size: 16px !important; margin-top: 18px !important; }
-    .gl-hero a  { font-size: 16px !important; padding: 15px 26px !important; }
+    .gl-hero h1 { font-size: clamp(26px, 2.77vw + 17.1px, 38.4px) !important;
+                  line-height: 1.28 !important; margin-top: 18px !important; }
+    .gl-hero p  { font-size: clamp(16px, 0.45vw + 14.6px, 18px) !important; margin-top: 18px !important; }
+    .gl-hero a  { font-size: clamp(16px, 0.45vw + 14.6px, 18px) !important;
+                  padding: clamp(15px, 0.67vw + 12.9px, 18px) clamp(26px, 2.23vw + 18.9px, 36px) !important; }
 
     /* --- 헤더: 태그라인 숨기고 56px 로 --- */
     .gl-header-inner { padding: 6px 16px !important; gap: 10px !important; }
@@ -102,7 +113,6 @@
   }
 
   @media (max-width: 400px) {
-    .gl-hero h1 { font-size: 27px !important; }
     .gl-carousel-panel { padding: 32px 12px !important; }
   }
 
@@ -166,7 +176,7 @@
         </div>
         
       </div>
-      <p style="margin: 32px 0 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 18px; color: rgba(255,255,255,0.62)">글잇의 학교 현장 적용 경험을 바탕으로 가정용 프로그램을 설계했습니다.</p>
+      <p class="gl-note" style="margin: 32px 0 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); font-size: 18px; color: rgba(255,255,255,0.62)">글잇의 학교 현장 적용 경험을 바탕으로 가정용 프로그램을 설계했습니다.</p>
     </div>
   </section>
   </sc-if>
