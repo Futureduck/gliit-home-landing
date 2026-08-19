@@ -68,16 +68,16 @@
   .intro p { margin: 18px 0 0; font-size: 17px; line-height: 1.7; color: var(--fg-3); text-wrap: pretty; }
 
   /* ---------- 섹션 ---------- */
-  .step { border-top: 1px solid var(--gliit-mist); padding: 40px 0 8px; }
+  .step { border-top: 1px solid var(--gliit-mist); padding: 40px 0 48px; }
   .step-no { display: inline-flex; align-items: center; height: 26px; padding: 0 10px; border-radius: 999px;
              background: var(--gliit-onyx); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .02em; }
   .step h2 { font-family: var(--font-display); font-size: 22px; line-height: 1.4;
              color: var(--gliit-onyx); margin: 14px 0 0; }
 
   /* ---------- 문항 ---------- */
-  .q { padding: 28px 0; border-bottom: 1px solid var(--gliit-haze); border-left: 0; border-right: 0; border-top: 0;
-       margin: 0; min-width: 0; }
-  .q:last-of-type { border-bottom: 0; }
+  /* 구분선은 단계(step) 사이에만 두고, 문항 사이는 여백만으로 구분한다.
+     margin-top 을 쓰면 fieldset/div 상관없이 h2·이전 문항과의 간격이 항상 동일하게 collapse 된다. */
+  .q { padding: 0; border: 0; margin: 40px 0 0; min-width: 0; }
   .q-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; padding: 0; }
   .q-label { font-size: 17px; font-weight: 600; line-height: 1.5; color: var(--gliit-onyx); }
   .chip { flex: none; font-size: 11px; font-weight: 600; padding: 3px 7px; border-radius: 5px; letter-spacing: .02em; }
@@ -211,8 +211,8 @@
 
   @media (max-width: 560px) {
     .intro { padding: 40px 0 32px; }
-    .step { padding: 32px 0 4px; }
-    .q { padding: 24px 0; }
+    .step { padding: 32px 0 36px; }
+    .q { margin-top: 32px; }
     .modal-card { padding: 26px 20px 20px; }
   }
   @media (prefers-reduced-motion: reduce) {
