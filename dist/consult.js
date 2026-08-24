@@ -14,6 +14,28 @@
 
   var MAX_NOTE = 300;
 
+  /* ---------- GA 트래킹 ---------- */
+  window.dataLayer = window.dataLayer || [];
+  var tracking = window.__gliitTracking || {};
+
+  ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'lp_variant'].forEach(function (k) {
+    var el = document.getElementById(k);
+    if (el) el.value = tracking[k] || '';
+  });
+  var entryEl = document.getElementById('entry_at');
+  if (entryEl) entryEl.value = new Date().toISOString();
+  var deviceEl = document.getElementById('device_type');
+  if (deviceEl) deviceEl.value = window.matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop';
+
+  dataLayer.push({
+    event: 'consult_form_view',
+    utm_source: tracking.utm_source,
+    utm_medium: tracking.utm_medium,
+    utm_campaign: tracking.utm_campaign,
+    utm_content: tracking.utm_content,
+    lp_variant: tracking.lp_variant
+  });
+
   var $ = function (id) { return document.getElementById(id); };
   var form = $('consultForm');
   if (!form) return;
@@ -176,7 +198,14 @@
       consent: $('consent').checked,
       hp: $('hp').value,
       page: location.pathname,
-      ref: document.referrer || ''
+      ref: document.referrer || '',
+      utm_source: tracking.utm_source || '',
+      utm_medium: tracking.utm_medium || '',
+      utm_campaign: tracking.utm_campaign || '',
+      utm_content: tracking.utm_content || '',
+      lp_variant: tracking.lp_variant || '',
+      entry_at: $('entry_at') ? $('entry_at').value : '',
+      device_type: $('device_type') ? $('device_type').value : ''
     };
   }
 
@@ -225,6 +254,16 @@
 
     send(payload).then(function (res) {
       if (res && res.status === 'accepted') {
+        dataLayer.push({
+          event: 'consult_submit',
+          utm_source: tracking.utm_source,
+          utm_medium: tracking.utm_medium,
+          utm_campaign: tracking.utm_campaign,
+          utm_content: tracking.utm_content,
+          lp_variant: tracking.lp_variant,
+          plan: payload.plan,
+          grade: payload.grade
+        });
         showSuccess(payload);
       } else if (res && res.status === 'closed') {
         openModal(fullModal);
@@ -281,7 +320,15 @@
     }
 
     send(body).then(function (res) {
-      done(!!(res && res.status === 'waitlisted'));
+      var ok = !!(res && res.status === 'waitlisted');
+      if (ok) {
+        dataLayer.push({
+          event: 'consult_waitlist',
+          utm_source: tracking.utm_source,
+          utm_campaign: tracking.utm_campaign
+        });
+      }
+      done(ok);
     }).catch(function () { done(false); });
   });
 })();
