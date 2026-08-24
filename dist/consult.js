@@ -40,6 +40,41 @@
   var form = $('consultForm');
   if (!form) return;
 
+  /* ---------- 문항별 완료 추적 ---------- */
+  var fieldCompleted = {};
+
+  function trackField(name, step) {
+    if (fieldCompleted[name]) return;
+    fieldCompleted[name] = true;
+    dataLayer.push({ event: 'form_field_complete', field_name: name, field_step: step });
+  }
+
+  [
+    { name: 'grade', step: 1 },
+    { name: 'reading', step: 2 },
+    { name: 'writing', step: 3 },
+    { name: 'reason', step: 4 },
+    { name: 'plan', step: 5 },
+    { name: 'times', step: 8 },
+    { name: 'consent', step: 9 }
+  ].forEach(function (f) {
+    form.querySelectorAll('input[name="' + f.name + '"]').forEach(function (input) {
+      input.addEventListener('change', function () {
+        if (input.checked) trackField(f.name, f.step);
+      });
+    });
+  });
+
+  [
+    { id: 'parentName', name: 'parentName', step: 6 },
+    { id: 'phone', name: 'phone', step: 7 }
+  ].forEach(function (f) {
+    var el = $(f.id);
+    el.addEventListener('blur', function () {
+      if (el.value.trim()) trackField(f.name, f.step);
+    });
+  });
+
   /* ---------- 휴대전화 자동 하이픈 ---------- */
   // 010-1234-5678 / 011-123-4567 형태로 맞춘다.
   function formatPhone(raw) {
