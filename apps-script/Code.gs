@@ -22,7 +22,8 @@ var CAP = 50;
 
 var HEADERS = [
   '접수시각', '학부모 성함', '연락처', '선호 연락시간', '자녀 학년',
-  '책읽기 선호', '글쓰기 선호', '관심 이유', '관심 플랜', '기타 문의', '개인정보 동의', '유입 경로'
+  '책읽기 선호', '글쓰기 선호', '관심 이유', '관심 플랜', '기타 문의', '개인정보 동의', '유입 경로',
+  'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'lp_variant', '진입시각', '기기유형'
 ];
 
 function doPost(e) {
@@ -60,7 +61,14 @@ function doPost(e) {
       d.plan,
       d.note || '',
       d.consent ? 'Y' : 'N',
-      d.ref || ''
+      d.ref || '',
+      d.utm_source || '',
+      d.utm_medium || '',
+      d.utm_campaign || '',
+      d.utm_content || '',
+      d.lp_variant || '',
+      d.entry_at || '',
+      d.device_type || ''
     ];
 
     // 2기 대기자는 정원과 무관하게 별도 시트에 적재
